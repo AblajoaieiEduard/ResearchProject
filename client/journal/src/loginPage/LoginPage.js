@@ -20,7 +20,8 @@ const LoginPage = () => {
 				}
 			)
 			.then((res) => {
-				history(`/${res.data}`);
+				console.log(res.data);
+				history(`/${res.data.userId}`);
 			})
 			.catch((error) => {
 				console.log(error);

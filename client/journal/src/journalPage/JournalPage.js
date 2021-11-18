@@ -1,5 +1,5 @@
-import { Button, Grid, Typography } from "@mui/material";
-import React, { Component, useEffect } from "react";
+import { Button, Typography } from "@mui/material";
+import React, { useEffect } from "react";
 
 import { Editor } from "react-draft-wysiwyg";
 import { ContentState, EditorState, Modifier } from "draft-js";
@@ -21,8 +21,11 @@ const JournalPage = () => {
 			.then((res) => {
 				console.log(res);
 				console.log(res.data);
+
 				setEditorState(
-					EditorState.createWithContent(ContentState.createFromText(res.data))
+					EditorState.createWithContent(
+						ContentState.createFromText(res.data.userId)
+					)
 				);
 			})
 			.catch((err) => {
